@@ -85,7 +85,7 @@ void linked_list_remove_last(node_t *head)
 
 void linked_list_remove_at(node_t *head, int index)
 {
-    node_t *currrent_node = head;
+    node_t *current_node = head;
     node_t *temporary_node;
 
     if (index == 0)
@@ -94,25 +94,6 @@ void linked_list_remove_at(node_t *head, int index)
 }
 
 int linked_list_get_at(node_t *head, int index)
-{
-
-    node_t *current_node = head;
-
-    if (index < 0 || index > head->size)
-    {
-        printf("Linked_list_get_at FAILURE \n");
-        return -1;
-    }
-
-    for (int i = 0; i < index; i++)
-    {
-        current_node = current_node->next;
-    }
-
-    return current_node->value;
-}
-
-node_t *get_node_at(node_t *head, int index)
 {
 
     node_t *current_node = head;
@@ -129,4 +110,23 @@ node_t *get_node_at(node_t *head, int index)
     }
 
     return current_node->value;
+}
+
+node_t *linked_list_get_node_at(node_t *head, int index)
+{
+
+    node_t *current_node = head;
+
+    if (index < 0 || index > head->size)
+    {
+        printf("Error getting node for index = %d \n", index);
+        exit(1);
+    }
+
+    for (int i = 0; i < index; i++)
+    {
+        current_node = current_node->next;
+    }
+
+    return current_node;
 }
