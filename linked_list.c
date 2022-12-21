@@ -83,14 +83,12 @@ void linked_list_remove_last(node_t *head)
     head->size--;
 }
 
-void linked_list_remove_at(node_t *head, int index)
+void linked_list_remove_at(node_t **head, int index)
 {
-    node_t *current_node = head;
-    node_t *temporary_node;
-
-    if (index == 0)
-    {
-    }
+    node_t *curr = *head;
+    *head = curr->next;
+    free(curr);
+    return;
 }
 
 int linked_list_get_at(node_t *head, int index)

@@ -19,6 +19,7 @@ void linked_list_add_end(node_t *head, int new_number);
 void linked_list_remove_last(node_t *head);
 void linked_list_remove_at(node_t *head, int index);
 int linked_list_get_at(node_t *head, int index);
-node_t *linked_list_get_node_at(node_t *head, int index);
+node_t *linked_list_get_node_at(node_t **head, int index);
+int linked_list_length(node_t head);
 
 #endif /*LINKED_LIST_H*/
